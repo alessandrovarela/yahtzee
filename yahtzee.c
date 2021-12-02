@@ -29,7 +29,7 @@ struct Jet
 };
 
 // *****************************************************************************
-// Structure Pointage
+// Structure Pointagee
 //
 // Liste de type de pointage du jeu. Comprend touts le possibilité de 
 // ponctuation.
