@@ -21,12 +21,12 @@ struct Jet
     int jet[NUMDES];
 };
 
-int rollTheDice (int max, int min )
+/* int rollTheDice (int max, int min )
 {
     srand(time(NULL));
     return rand() % max + min;
 }
-
+ */
 
 int main()
 {
