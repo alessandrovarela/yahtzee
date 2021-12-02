@@ -15,10 +15,42 @@
 
 #define NUMDES 5
 
+
+// *****************************************************************************
+// Structure Jet
+//
+// Nombre de dés du jeu
+//
+//*****************************************************************************
 typedef struct Jet Jet;
 struct Jet
 {
-    int jet[NUMDES];
+    int des[NUMDES];
+};
+
+// *****************************************************************************
+// Structure Pointage
+//
+// Liste de type de pointage du jeu. Comprend touts le possibilité de 
+// ponctuation.
+//
+//*****************************************************************************
+typedef struct Pointage Pointage; 
+struct Pointage 
+{
+    int un; 
+    int deux;
+    int trois;
+    int quatre;
+    int cinq;
+    int six;
+    int brelan;
+    int carre;
+    int mainPleine;
+    int pSuite;
+    int gSuite;
+    int yahtzee;
+    int chance;
 };
 
 /* int rollTheDice (int max, int min )
