@@ -11,13 +11,15 @@
 // ****************************************************************************
 
 #include <stdio.h>
-#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
-#define NUMDES 5
-#define NUMMINDES 1
-#define NUMMAXDES 6
+// #include "libyahtzee.h"
+// #include "yahtzeeTests.h"
+
+#define NOMBREDES 5 //nombre de dés du Jet
+#define MINFACEDES 1
+#define MAXFACEDES 6
 
 
 
@@ -30,7 +32,7 @@
 typedef struct Jet Jet;
 struct Jet
 {
-    int des[NUMDES];
+    int des[NOMBREDES];
 };
 
 // *****************************************************************************
@@ -58,7 +60,7 @@ struct Pointage
     int chance;
 };
 
-int lancerDes (int min, int max )
+int lancerDe (int min, int max )
 {
     return rand() % max + min;
 }
@@ -173,6 +175,34 @@ void imprimerLesFaces(int faces, int nombreRangee)
     }
 }
 
+// *****************************************************************************
+// lancerLesDes
+//
+// Lance les dés a chaque tour et a chaque choix d'utilisateur.
+// Mettre la valeur d'un dé a chaque position du jet compte tenu la choix
+// de l'utilisateur.
+// Si la valeur de la position du Jet est = 1 un nouveau numéro sera tiré.
+//
+// INPUT :
+//     jet: Adresse mémoire d'un Jet
+//     char: Vecteur avec les choix de l'utilisateur 
+//
+// OUTPUT : 
+//     void
+//        
+// *****************************************************************************
+void lancerLesDes(Jet* jet , char choix[NOMBREDES])
+{
+    for(int i = 0; i < NOMBREDES; i++)
+    {
+        if (choix[i] == '1')
+        jet->des[i] = lancerDe( MINFACEDES , MAXFACEDES);
+    }
+}
+
+
+// Fonctions pour les tests
+
 void printTitreTest(char nomFunction[100])
 {
   printf("|--------------------------------------------|\n");
@@ -221,32 +251,54 @@ void testImprimerLesFaces()
   imprimerLesFaces(6,5); printf("\n");
 }
 
-void testLancerDes()
+void testlancerDe()
 {
-  printTitreTest("testLancerDes");
-  int test1 = lancerDes(NUMMINDES, NUMMAXDES);
-    if (test1 >= NUMMINDES && test1 <= NUMMAXDES )
-      printf("REUSSI, le numero returné %d est entre %d et %d\n", test1, NUMMINDES, NUMMAXDES);
+  printTitreTest("testlancerDe");
+  int test1 = lancerDe(MINFACEDES, MAXFACEDES);
+    if (test1 >= MINFACEDES && test1 <= MAXFACEDES )
+      printf("REUSSI, le numero returné %d est entre %d et %d\n", test1, MINFACEDES, MAXFACEDES);
     else
-      printf("ÉCHEC, le numero returné %d est dehors %d et %d\n", test1, NUMMINDES, NUMMAXDES);
+      printf("ÉCHEC, le numero returné %d est dehors %d et %d\n", test1, MINFACEDES, MAXFACEDES);
     
-  test1 = lancerDes(NUMMINDES, NUMMAXDES);
-    if (test1 >= NUMMINDES && test1 <= NUMMAXDES )
-      printf("REUSSI, le numero returné %d est entre %d et %d\n", test1, NUMMINDES, NUMMAXDES);
+  test1 = lancerDe(MINFACEDES, MAXFACEDES);
+    if (test1 >= MINFACEDES && test1 <= MAXFACEDES )
+      printf("REUSSI, le numero returné %d est entre %d et %d\n", test1, MINFACEDES, MAXFACEDES);
     else
-      printf("ÉCHEC, le numero returné %d est dehors %d et %d\n", test1, NUMMINDES, NUMMAXDES);
+      printf("ÉCHEC, le numero returné %d est dehors %d et %d\n", test1, MINFACEDES, MAXFACEDES);
   
-  test1 = lancerDes(NUMMINDES, NUMMAXDES);
-    if (test1 >= NUMMINDES && test1 <= NUMMAXDES )
-      printf("REUSSI, le numero returné %d est entre %d et %d\n", test1, NUMMINDES, NUMMAXDES);
+  test1 = lancerDe(MINFACEDES, MAXFACEDES);
+    if (test1 >= MINFACEDES && test1 <= MAXFACEDES )
+      printf("REUSSI, le numero returné %d est entre %d et %d\n", test1, MINFACEDES, MAXFACEDES);
     else
-      printf("ÉCHEC, le numero returné %d est dehors %d et %d\n", test1, NUMMINDES, NUMMAXDES);
+      printf("ÉCHEC, le numero returné %d est dehors %d et %d\n", test1, MINFACEDES, MAXFACEDES);
+}
+
+void TestlancerLesDes(){
+  Jet jet = { 1, 5 , 6 , 2 , 3};
+
+  char choix[] = "10001";
+ 
+  printf ( "Jet Avant ->%d %d %d %d %d\n" , jet.des[0], jet.des[1] ,  jet.des[2] , jet.des[3], jet.des[4] );
+  lancerLesDes(&jet, choix);
+  printf ( "Jet Aprés pour changer 10001 -> %d %d %d %d %d\n" , jet.des[0], jet.des[1] ,  jet.des[2] , jet.des[3], jet.des[4] );
+
+  char choix2[] = "11000";
+
+  lancerLesDes(&jet, choix2);
+  printf ( "Jet Aprés pour changer 11000 -> %d %d %d %d %d\n" , jet.des[0], jet.des[1] ,  jet.des[2] , jet.des[3], jet.des[4] );
+
+  char choix3[] = "00011";
+
+  lancerLesDes(&jet, choix3);
+  printf ( "Jet Aprés pour changer 00011 -> %d %d %d %d %d\n" , jet.des[0], jet.des[1] ,  jet.des[2] , jet.des[3], jet.des[4] );
+
 }
 
 void rouleTousTestes()
 {
   testImprimerLesFaces();
-  testLancerDes();
+  testlancerDe();
+  TestlancerLesDes();
 } 
 
 
