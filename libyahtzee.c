@@ -12,6 +12,27 @@
 
 #include "libyahtzee.h"
 
+/*******************************************/
+Jet trierLesDes(Jet jet)
+{
+    int min;
+
+    for(int i = 0; i < NOMBREDES; i++)
+    {
+        for(int j = 0; j < NOMBREDES; j++)
+        {
+            if (jet.des[j] > jet.des[i])
+            {
+                min = jet.des[i];
+                jet.des[i] = jet.des[j];
+                jet.des[j] = min;
+            }
+        }
+    }
+    return jet;
+}
+
+
 int lancerDe (int min, int max )
 {
     return rand() % max + min;

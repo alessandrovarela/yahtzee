@@ -56,6 +56,19 @@ struct Pointage
     int yahtzee;
     int chance;
 };
+// *****************************************************************************
+// trierLesDes
+// 
+// Organize les dés dans l'ordre croissant
+// 
+// INPUT : 
+//     jet : cinq dés.
+//
+// OUTPUT : 
+//     un structure avec les 5 dés triés par ordre croissant.
+//
+// *****************************************************************************
+Jet trierLesDes(Jet jet);
 
 int lancerDe (int min, int max );
 void imprimerLesFaces(int faces, int nombreRangee);

@@ -15,6 +15,7 @@
 
 void printTitreTest(char nomFunction[100])
 {
+  printf("\n");
   printf("|--------------------------------------------|\n");
   printf(" >>> test de la function \"%s\" \n", nomFunction);
   printf("|--------------------------------------------|\n");
@@ -104,9 +105,27 @@ void TestlancerLesDes(){
 
 }
 
+void TestTrierLesDes(){
+  printTitreTest("TestTrierLesDes");
+
+  Jet jet_avant = { 1, 5 , 6 , 2 , 3};
+  Jet jet;
+
+  printf ( "Jet Avant ->%d %d %d %d %d\n" , jet_avant.des[0], jet_avant.des[1] ,  jet_avant.des[2] , jet_avant.des[3], jet_avant.des[4] );
+  jet = trierLesDes(jet_avant);
+
+  if ( jet.des[0] == 1  && jet.des[1] == 2 && jet.des[2] == 3 && jet.des[3] == 5 && jet.des[4] == 6) 
+      printf("REUSSI, le Jet est triée: ");
+  else
+      printf("ÉCHEC, le Jet n'est pas triée: ");
+
+  printf ( "%d %d %d %d %d\n" , jet.des[0], jet.des[1] ,  jet.des[2] , jet.des[3], jet.des[4] );
+}
+
 void rouleTousTestes()
 {
   testImprimerLesFaces();
   testlancerDe();
   TestlancerLesDes();
+  TestTrierLesDes();
 }

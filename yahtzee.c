@@ -15,7 +15,7 @@
 #include <time.h>
 
 #include "libyahtzee.h"
-// #include "yahtzeeTests.h"
+#include "yahtzeeTests.h"
 
 #define NOMBREDES 5 //nombre de dés du Jet
 #define MINFACEDES 1
