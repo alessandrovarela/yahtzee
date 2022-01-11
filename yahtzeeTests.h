@@ -18,3 +18,4 @@ void testlancerDe();
 void TestlancerLesDes();
 void rouleTousTestes();
 void TestTrierLesDes();
+void testImprimerJet();

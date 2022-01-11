@@ -73,4 +73,5 @@ Jet trierLesDes(Jet jet);
 int lancerDe (int min, int max );
 void imprimerLesFaces(int faces, int nombreRangee);
 void lancerLesDes(Jet* jet , char choix[NOMBREDES]);
+void imprimerJet(Jet jet);
 

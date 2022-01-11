@@ -172,3 +172,18 @@ void lancerLesDes(Jet* jet , char choix[NOMBREDES])
         jet->des[i] = lancerDe( MINFACEDES , MAXFACEDES);
     }
 }
+
+void imprimerJet(Jet jet) 
+{
+    for (int i = 1;i <= 5; i++)
+    {
+        printf(" ");
+        for (int j = 0;j < NOMBREDES; j++)
+        {
+            printf(" ");
+            imprimerLesFaces(jet.des[j], i);
+        }
+        printf("\n");
+    }
+}
+

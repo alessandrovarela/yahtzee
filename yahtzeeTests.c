@@ -122,10 +122,31 @@ void TestTrierLesDes(){
   printf ( "%d %d %d %d %d\n" , jet.des[0], jet.des[1] ,  jet.des[2] , jet.des[3], jet.des[4] );
 }
 
+void testImprimerJet()
+{
+  printTitreTest("TestImprimerJet");
+
+  Jet jet = { 1, 5 , 6 , 2 , 3};
+   
+  printf( "Jet ->%d %d %d %d %d\n" , jet.des[0], jet.des[1] ,  jet.des[2] , jet.des[3], jet.des[4] );
+  printf("\n");
+
+  imprimerJet(jet);
+
+  printf("\n");
+  Jet jet2 = { 3, 5, 1, 4, 2};
+   
+  printf( "Jet ->%d %d %d %d %d\n" , jet2.des[0], jet2.des[1] ,  jet2.des[2] , jet2.des[3], jet2.des[4] );
+  printf("\n");
+
+  imprimerJet(jet2);
+}
+
 void rouleTousTestes()
 {
   testImprimerLesFaces();
   testlancerDe();
   TestlancerLesDes();
   TestTrierLesDes();
+  testImprimerJet();
 }
