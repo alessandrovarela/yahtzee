@@ -15,7 +15,10 @@
 void printTitreTest(char nomFunction[100]);
 void testImprimerLesFaces();
 void testlancerDe();
-void TestlancerLesDes();
-void rouleTousTestes();
-void TestTrierLesDes();
+void testlancerLesDes();
+void testTrierLesDes();
 void testImprimerJet();
+void testSommeFaces();
+void testBrelan();
+void printArrJet(char msg[100] , Jet jet );
+void rouleTousTestes();

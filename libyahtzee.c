@@ -31,13 +31,49 @@ Jet trierLesDes(Jet jet)
     }
     return jet;
 }
+/*************************************************/
+int sommeFaces(Jet jet, int nombreFaces) 
+{
+    jet = trierLesDes(jet);
 
+    int compte = 1;
+    int somme  = 0;
+    Boolean estValide = FAUX;
 
+    for(int i = 0; i < NOMBREDES; i++)
+    {
+        // Faire le test le test jusqu'à position avant la dernière
+        if (i < (NOMBREDES - 1))
+        {
+            if ( jet.des[i] == jet.des[ i + 1])
+            {    
+                compte++;
+                if (compte >= nombreFaces)
+                    estValide = VRAI; 
+            }
+            else
+                compte = 1;
+        }
+        somme += jet.des[i]; 
+    }
+    if ((estValide) || (nombreFaces == FACESCHANCE))
+        return somme;
+    else
+        return FAUX;    
+}
+
+/***********************************************************/
+int brelan(Jet jet)
+{
+    return sommeFaces(jet, FACESBRELAN);
+}
+
+/***********************************************************/
 int lancerDe (int min, int max )
 {
     return rand() % max + min;
 }
-
+/***********************************************************/
 void imprimerLesFaces(int faces, int nombreRangee)
 {
     if (nombreRangee == 1 || nombreRangee == 5)
@@ -148,22 +184,7 @@ void imprimerLesFaces(int faces, int nombreRangee)
     }
 }
 
-// *****************************************************************************
-// lancerLesDes
-//
-// Lance les dés a chaque tour et a chaque choix d'utilisateur.
-// Mettre la valeur d'un dé a chaque position du jet compte tenu la choix
-// de l'utilisateur.
-// Si la valeur de la position du Jet est = 1 un nouveau numéro sera tiré.
-//
-// INPUT :
-//     jet: Adresse mémoire d'un Jet
-//     char: Vecteur avec les choix de l'utilisateur 
-//
-// OUTPUT : 
-//     void
-//        
-// *****************************************************************************
+/***********************************************************/
 void lancerLesDes(Jet* jet , char choix[NOMBREDES])
 {
     for(int i = 0; i < NOMBREDES; i++)
@@ -172,7 +193,7 @@ void lancerLesDes(Jet* jet , char choix[NOMBREDES])
         jet->des[i] = lancerDe( MINFACEDES , MAXFACEDES);
     }
 }
-
+/***********************************************************/
 void imprimerJet(Jet jet) 
 {
     for (int i = 1;i <= 5; i++)

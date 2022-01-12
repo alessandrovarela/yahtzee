@@ -4,3 +4,9 @@
 1. Open the project
 2. Clone the project
 3. Your is done to colaborate with this project!
+
+---
+## Cheats Mac OS
+
+Compile: 
+gcc *.c -o yahtzee.out
