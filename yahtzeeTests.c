@@ -89,11 +89,13 @@ void testlancerDe()
 
 /*************************************************/
 void testlancerLesDes(){
+
+  printTitreTest("testlancerLesDes");
   Jet jet = { 1, 5 , 6 , 2 , 3};
 
   char choix[] = "10001";
  
-  printf ( "Jet Avant ->%d %d %d %d %d\n" , jet.des[0], jet.des[1] ,  jet.des[2] , jet.des[3], jet.des[4] );
+  printArrJet ( "Jet Avant ->" ,  jet);
   lancerLesDes(&jet, choix);
   printf ( "Jet Aprés pour changer 10001 -> %d %d %d %d %d\n" , jet.des[0], jet.des[1] ,  jet.des[2] , jet.des[3], jet.des[4] );
 
@@ -113,7 +115,7 @@ void testlancerLesDes(){
 void testTrierLesDes(){
   printTitreTest("TestTrierLesDes");
 
-  Jet jet_avant = { 1, 5 , 6 , 2 , 3};
+  Jet jet_avant = { 3, 6 , 5 , 2 , 1};
   Jet jet;
 
   printf ( "Jet Avant ->%d %d %d %d %d\n" , jet_avant.des[0], jet_avant.des[1] ,  jet_avant.des[2] , jet_avant.des[3], jet_avant.des[4] );
