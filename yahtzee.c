@@ -11,57 +11,27 @@
 // ****************************************************************************
 
 #include <stdio.h>
-#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
-#define NUMDES 5
+#include "libyahtzee.h"
+#include "yahtzeeTests.h"
 
+#define NOMBREDES 5 //nombre de dés du Jet
+#define MINFACEDES 1
+#define MAXFACEDES 6
 
-// *****************************************************************************
-// Structure Jet
-//
-// Nombre de dés du jeu
-//
-//*****************************************************************************
-typedef struct Jet Jet;
-struct Jet
+int main(int argc, char** argv)
 {
-    int des[NUMDES];
-};
 
-// *****************************************************************************
-// Structure Pointage
-//
-// Liste de type de pointage du jeu. Comprend touts le possibilité de 
-// ponctuation.
-//
-//*****************************************************************************
-typedef struct Pointage Pointage; 
-struct Pointage 
-{
-    int un; 
-    int deux;
-    int trois;
-    int quatre;
-    int cinq;
-    int six;
-    int brelan;
-    int carre;
-    int mainPleine;
-    int pSuite;
-    int gSuite;
-    int yahtzee;
-    int chance;
-};
+	srand(time(NULL));
 
-/* int rollTheDice (int max, int min )
-{
-    srand(time(NULL));
-    return rand() % max + min;
-}
- */
-
-int main()
-{
- printf("inicio");
-
+	if ((argc > 1) && 
+		(((argv[1][0] = 'T') && (argv[1][1] == 'E') && (argv[1][2] == 'S') && (argv[1][3] == 'T')) || ((argv[1][0] = 't') && (argv[1][1] == 'e') &&  (argv[1][2] == 's') && (argv[1][3] == 't')))) 
+	{
+		rouleTousTestes();
+	}
+	else
+		printf("inicio\n");
+	return 0;
 }
