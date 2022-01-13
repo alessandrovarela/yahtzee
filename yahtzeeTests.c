@@ -97,7 +97,7 @@ void testlancerLesDes(){
  
   printArrJet ( "Jet Avant ->" ,  jet);
   lancerLesDes(&jet, choix);
-  printf ( "Jet Aprés pour changer 10001 -> %d %d %d %d %d\n" , jet.des[0], jet.des[1] ,  jet.des[2] , jet.des[3], jet.des[4] );
+  printArrJet ( "Jet Aprés pour changer 10001 ->", jet);
 
   char choix2[] = "11000";
 
