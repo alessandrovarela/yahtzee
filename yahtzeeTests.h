@@ -20,5 +20,6 @@ void testTrierLesDes();
 void testImprimerJet();
 void testSommeFaces();
 void testBrelan();
-void printArrJet(char msg[100] , Jet jet );
+void testNbDeFace();
+void printArrJet(char msg[100] , Jet jet);
 void rouleTousTestes();

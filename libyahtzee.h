@@ -77,7 +77,7 @@ struct Pointage
     int gSuite;
     int yahtzee;
     int chance;
-};
+};          
 // *****************************************************************************
 // trierLesDes
 // 
@@ -162,4 +162,5 @@ int lancerDe (int min, int max );
 void lancerLesDes(Jet* jet , char choix[NOMBREDES]);
 void imprimerLesFaces(int faces, int nombreRangee);
 void imprimerJet(Jet jet);
-
+void garderPointage(Jet jet, Pointage* feuilleScore, char figure);
+int nbDeFace (Jet jet, int face);

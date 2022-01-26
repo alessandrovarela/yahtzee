@@ -207,4 +207,32 @@ void imprimerJet(Jet jet)
         printf("\n");
     }
 }
+/***********************************************************/
+void garderPointage(Jet jet, Pointage* feuilleScore, char figure)
+{
+    switch (figure)
+    {
+    case 'B': 
+        feuilleScore->brelan = brelan(jet);
+        break;
+    case 'C':
+       // feuilleScore->carre = 
+    
+    default:
+        break;
+    }
+}
+/***********************************************************/
+int nbDeFace (Jet jet, int face)
+{
+    int compteur = 0;
+    for (int i = 0; i < NOMBREDES; i++)
+    {
+            if (jet.des[i] == face)
+            {
+                compteur++;
+            }
+    }
+    return compteur * face;
+}
 

@@ -239,7 +239,41 @@ void printArrJet(char msg[100] , Jet jet ){
  printf( "%s %d %d %d %d %d\n" , msg, jet.des[0], jet.des[1] ,  jet.des[2] , jet.des[3], jet.des[4] );  
 }
 /*************************************************/
+void testNbDeFace()
+{
+  printTitreTest("testNbDeFace");
 
+  Jet jet1 = {3,4,1,1,5};
+  int face1 = 1;
+  int result1 = nbDeFace(jet1, face1);
+
+  printArrJet("jet1 -> ",jet1);
+  printf("face1 -> %d\n", face1);
+
+  if(result1 == 2)
+      printf("REUSSI! :), la fonction retourne 2\n");
+    else
+      printf("ECHEC! :(, la fonction ne retourne pas 2, elle retourne %d\n", result1);
+
+  Jet jet2 = {3,4,1,3,3};
+  int face2 = 3;
+  int result2 = nbDeFace(jet2, face2);
+
+  printArrJet("\njet2 -> ",jet2);
+  printf("face2 -> %d\n", face2);
+
+  result2 == 9 ? printf("REUSSI! :), la fonction retourne 9\n") : printf("ECHEC! :(, la fonction ne retourne pas 9, elle retourne %d\n", result2);
+
+  Jet jet3 = {5,5,5,5,5};
+  int face3 = 5;
+  int result3 = nbDeFace(jet3, face3);
+
+  printArrJet("\njet3 -> ",jet3);
+  printf("face3 -> %d\n", face3);
+
+  result3 == 25 ? printf("REUSSI! :), la fonction retourne 25\n") : printf("ECHEC! :(, la fonction ne retourne pas 25, elle retourne %d\n", result3);
+}
+/*************************************************/
 void rouleTousTestes()
 {
   testImprimerLesFaces();
@@ -249,4 +283,5 @@ void rouleTousTestes()
   testImprimerJet();
   testSommeFaces();
   testBrelan();
+  testNbDeFace();
 }
