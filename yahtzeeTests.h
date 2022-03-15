@@ -26,3 +26,4 @@ void rouleTousTestes();
 void testMainPLeine();
 void testeImprimerScoresPossibles(Jet jet);
 void testChance();
+void testGrandeSuite();

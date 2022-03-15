@@ -103,7 +103,7 @@ int grandeSuite (Jet jet)
 {
     jet = trierLesDes(jet);
     
-    Boolean estValide1 = (jet.des[1] == jet.des[0] + 1) && (jet.des[2] == jet.des[1] + 1) && (jet.des[3] == jet.des[2] + 1) && (jet.des[4] == jet.des[3] + 1) && (jet.des[5] == jet.des[4] + 1);
+    Boolean estValide1 = (jet.des[1] == jet.des[0] + 1) && (jet.des[2] == jet.des[1] + 1) && (jet.des[3] == jet.des[2] + 1) && (jet.des[4] == jet.des[3] + 1);
 
     return(estValide1) ? 40 : 0;
 }

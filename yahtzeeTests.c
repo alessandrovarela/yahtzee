@@ -281,7 +281,17 @@ void testGrandeSuite()
 		printf ("RÉUSSI! :) Le Jet c'est un carre est la somme est %d\n\n", resultatTestGrandeSuite);
 	else 
 		printf ("ÉCHEC! :( Le resultat du Test 1 (carre) est %d et aurait dû être 40\n\n", resultatTestGrandeSuite);
+
+	Jet testGrandeSuite2 = {6,3,4,2,5};
+	resultatTestGrandeSuite = grandeSuite(testGrandeSuite2);
+  printArrJet( "Jet grande suite de 1 (Attendu Vrai et somme 40) ->", testGrandeSuite2);
+
+  if (resultatTestGrandeSuite == 40)
+		printf ("RÉUSSI! :) Le Jet c'est un carre est la somme est %d\n\n", resultatTestGrandeSuite);
+	else 
+		printf ("ÉCHEC! :( Le resultat du Test 1 (carre) est %d et aurait dû être 40\n\n", resultatTestGrandeSuite);
 }
+/*************************************************/
 void printArrJet(char msg[100] , Jet jet ){
  printf( "%s %d %d %d %d %d\n" , msg, jet.des[0], jet.des[1] ,  jet.des[2] , jet.des[3], jet.des[4] );  
 }
