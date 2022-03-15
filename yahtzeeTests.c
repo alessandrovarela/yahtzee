@@ -235,6 +235,53 @@ void testBrelan()
 }
 
 /*************************************************/
+void testCarre()
+{
+  printTitreTest("testCarre"); 
+
+	Jet testcarreUn = {1,1,1,1,5};
+	int resultatTestCarre = carre(testcarreUn);
+  printArrJet( "Jet carre de 1 (Attendu Vrai et somme 9) ->", testcarreUn );
+
+  if (resultatTestCarre == 9)
+		printf ("RÉUSSI! :) Le Jet c'est un carre est la somme est %d\n\n", resultatTestCarre);
+	else 
+		printf ("ÉCHEC! :( Le resultat du Test 1 (carre) est %d et aurait dû être 9\n\n", resultatTestCarre);
+  
+
+	Jet testcarre2 = {3,4,3,3,3};
+	resultatTestCarre = carre(testcarre2);
+  printArrJet( "Jet carre de 1 (Attendu Vrai et somme 16) ->", testcarre2);
+
+  if (resultatTestCarre == 16)
+		printf ("RÉUSSI! :) Le Jet c'est un carre est la somme est %d\n\n", resultatTestCarre);
+	else 
+		printf ("ÉCHEC! :( Le resultat du Test 1 (carre) est %d et aurait dû être 16\n\n", resultatTestCarre);
+  
+
+	Jet testcarre3 = {1,1,2,2,5};
+	resultatTestCarre = carre(testcarre3);
+  printArrJet( "Jet carre de 1 (Attendu Vrai et somme 0) ->", testcarre3 );
+
+  if (resultatTestCarre == 0)
+		printf ("RÉUSSI! :) Le Jet c'est un carre est la somme est %d\n\n", resultatTestCarre);
+	else 
+		printf ("ÉCHEC! :( Le resultat du Test 1 (carre) est %d et aurait dû être 9\n\n", resultatTestCarre);
+}
+/*************************************************/
+void testGrandeSuite()
+{
+  printTitreTest("testGrandeSuite"); 
+
+	Jet testGrandeSuite1 = {1,6,4,2,5};
+	int resultatTestGrandeSuite = grandeSuite(testGrandeSuite1);
+  printArrJet( "Jet grande suite de 1 (Attendu Vrai et somme 40) ->", testGrandeSuite1 );
+
+  if (resultatTestGrandeSuite == 40)
+		printf ("RÉUSSI! :) Le Jet c'est un carre est la somme est %d\n\n", resultatTestGrandeSuite);
+	else 
+		printf ("ÉCHEC! :( Le resultat du Test 1 (carre) est %d et aurait dû être 40\n\n", resultatTestGrandeSuite);
+}
 void printArrJet(char msg[100] , Jet jet ){
  printf( "%s %d %d %d %d %d\n" , msg, jet.des[0], jet.des[1] ,  jet.des[2] , jet.des[3], jet.des[4] );  
 }
@@ -274,6 +321,68 @@ void testNbDeFace()
   result3 == 25 ? printf("REUSSI! :), la fonction retourne 25\n") : printf("ECHEC! :(, la fonction ne retourne pas 25, elle retourne %d\n", result3);
 }
 /*************************************************/
+void testMainPLeine()
+{
+  printTitreTest("testMainPLeine");
+
+  Jet testMainPleine1 = {4,4,3,3,3};
+  int resultatTest1 = mainPleine(testMainPleine1);
+  printArrJet("Main pleine, 1 paire et 1 brelan, ->", testMainPleine1);
+
+  if (resultatTest1 != 0)
+    printf("cerrto\n\n");
+  else
+    printf("errrado\n\n");
+
+  Jet testMainPleine2 = {4,4,4,3,3};
+  int resultatTest2 = mainPleine(testMainPleine2);
+  printArrJet("Main pleine, 1 paire et 1 brelan, ->", testMainPleine2);
+
+  if (resultatTest2 != 0)
+    printf("cerrto\n");
+  else
+    printf("errrado\n");
+
+  Jet testMainPleine3 = {4,4,4,4,3};
+  int resultatTest3 = mainPleine(testMainPleine3);
+  printArrJet("Main pleine, 1 paire et 1 brelan, ->", testMainPleine3);
+
+  if (resultatTest3 != 0)
+    printf("cerrto\n");
+  else
+    printf("errrado\n");
+}
+/*************************************************/
+void testChance()
+{
+   printTitreTest("testChance");
+
+  Jet testChance1 = {3,2,5,5,1};
+  int resultatTestChance1 = chance(testChance1);
+  printArrJet("chance, ->", testChance1);
+
+  if (resultatTestChance1 == 11)
+		printf ("RÉUSSI! :) Le Jet c'est un carre est la somme est %d\n\n", resultatTestChance1);
+	else 
+		printf ("ÉCHEC! :( Le resultat du Test 1 (carre) est %d et aurait dû être 11\n\n", resultatTestChance1);
+
+  Jet testChance2 = {1,3,5,4,4};
+  int resultatTestChance2 = chance(testChance2);
+  printArrJet("chance, ->", testChance2);
+
+  if (resultatTestChance2 == 17)
+		printf ("RÉUSSI! :) Le Jet c'est un carre est la somme est %d\n\n", resultatTestChance2);
+	else 
+		printf ("ÉCHEC! :( Le resultat du Test 1 (carre) est %d et aurait dû être 17\n\n", resultatTestChance2);
+}
+/*************************************************/
+void testeImprimerScoresPossibles(Jet jet)
+{
+  printTitreTest("testeImprimerScoresPossibles");
+  Jet testeImprimerScoresPossibles1 = {2,2,3,3,3};
+  imprimerScoresPossibles(testeImprimerScoresPossibles1);
+}
+
 void rouleTousTestes()
 {
   testImprimerLesFaces();
@@ -283,5 +392,10 @@ void rouleTousTestes()
   testImprimerJet();
   testSommeFaces();
   testBrelan();
+  testCarre();
+  testChance();
   testNbDeFace();
+  testMainPLeine();
+  testGrandeSuite();
+ // testeImprimerScoresPossibles();
 }

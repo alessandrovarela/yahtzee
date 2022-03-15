@@ -67,11 +67,45 @@ int brelan(Jet jet)
 {
     return sommeFaces(jet, FACESBRELAN);
 }
-
+/***********************************************************/
+int carre(Jet jet)
+{
+    return sommeFaces(jet, FACESCARRE);
+}
+/***********************************************************/
+int chance(Jet jet)
+{
+    return sommeFaces(jet, FACESCHANCE);
+}
 /***********************************************************/
 int lancerDe (int min, int max )
 {
     return rand() % max + min;
+}
+/***********************************************************/
+int yahtzee(Jet jet)
+{
+    return sommeFaces(jet, FACESYATHZEE);
+}
+/***********************************************************/
+int mainPleine (Jet jet)
+{
+    jet = trierLesDes(jet);
+
+    Boolean estValide1 = (jet.des[0] == jet.des[1]) && ((jet.des[2] == jet.des[3]) && (jet.des[3] == jet.des[4]));
+    Boolean estValide2 = ((jet.des[0] == jet.des[1]) && (jet.des[1] == jet.des[2])) && (jet.des[3] == jet.des[4]);
+
+    return(estValide1 || estValide2) ? 25 : 0;
+}
+
+/***********************************************************/
+int grandeSuite (Jet jet)
+{
+    jet = trierLesDes(jet);
+    
+    Boolean estValide1 = (jet.des[1] == jet.des[0] + 1) && (jet.des[2] == jet.des[1] + 1) && (jet.des[3] == jet.des[2] + 1) && (jet.des[4] == jet.des[3] + 1) && (jet.des[5] == jet.des[4] + 1);
+
+    return(estValide1) ? 40 : 0;
 }
 /***********************************************************/
 void imprimerLesFaces(int faces, int nombreRangee)
@@ -235,4 +269,18 @@ int nbDeFace (Jet jet, int face)
     }
     return compteur * face;
 }
-
+/***********************************************************/
+void imprimerScoresPossibles(Jet jet)
+{
+    printf("**********************************************");
+    printf("*    QUEL POINTAGE VOULEZ-VOUS GARDER?       *");
+    printf("**********************************************");
+    printf("*     (1) :  0       *       (B)relan = %d   *", brelan);
+    printf("*     (2) :  0       *        (C)arré = %d   *", carre);
+    printf("*     (3) :  0       *  (M)ain Pleine = %d   *", mainPleine);
+    printf("*     (4) :  0       * (P)etite suite = 00   *");
+    printf("*     (5) :  0       * (G)rande suite = %d   *", grandeSuite);
+    printf("*     (6) :  0       *      (Y)ahtzee = %d   *", yahtzee);
+    printf("*                    *       C(h)ance = %d   *", chance);
+    printf("**********************************************");
+}
