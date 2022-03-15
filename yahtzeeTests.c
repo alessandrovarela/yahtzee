@@ -371,10 +371,10 @@ void testChance()
   int resultatTestChance1 = chance(testChance1);
   printArrJet("chance, ->", testChance1);
 
-  if (resultatTestChance1 == 11)
-		printf ("RÉUSSI! :) Le Jet c'est un carre est la somme est %d\n\n", resultatTestChance1);
+  if (resultatTestChance1 = 16)
+		printf ("RÉUSSI! :) Le Jet c'est un chance est la somme est %d\n\n", resultatTestChance1);
 	else 
-		printf ("ÉCHEC! :( Le resultat du Test 1 (carre) est %d et aurait dû être 11\n\n", resultatTestChance1);
+		printf ("ÉCHEC! :( Le resultat du Test 1 chance est %d et aurait dû être 16\n\n", resultatTestChance1);
 
   Jet testChance2 = {1,3,5,4,4};
   int resultatTestChance2 = chance(testChance2);
