@@ -85,7 +85,7 @@ int lancerDe (int min, int max )
 /***********************************************************/
 int yahtzee(Jet jet)
 {
-    return sommeFaces(jet, FACESYATHZEE);
+    return sommeFaces(jet, FACESYATHZEE) > 0 ? 50 : 0;
 }
 /***********************************************************/
 int mainPleine (Jet jet)

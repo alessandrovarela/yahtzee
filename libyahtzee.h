@@ -169,3 +169,4 @@ void imprimerScoresPossibles(Jet jet);
 int carre(Jet jet);
 int grandeSuite (Jet jet);
 int chance(Jet jet);
+int yahtzee(Jet jet);

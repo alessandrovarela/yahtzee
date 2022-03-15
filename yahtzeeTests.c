@@ -367,14 +367,14 @@ void testChance()
 {
    printTitreTest("testChance");
 
-  Jet testChance1 = {3,2,5,5,1};
-  int resultatTestChance1 = chance(testChance1);
-  printArrJet("chance, ->", testChance1);
+  Jet testyahtzee = {3,2,5,5,1};
+  int resultatTestyahtzee = chance(testyahtzee);
+  printArrJet("chance, ->", testyahtzee);
 
-  if (resultatTestChance1 = 16)
-		printf ("RÉUSSI! :) Le Jet c'est un chance est la somme est %d\n\n", resultatTestChance1);
+  if (resultatTestyahtzee == 16)
+		printf ("RÉUSSI! :) Le Jet c'est un chance est la somme est %d\n\n", resultatTestyahtzee);
 	else 
-		printf ("ÉCHEC! :( Le resultat du Test 1 chance est %d et aurait dû être 16\n\n", resultatTestChance1);
+		printf ("ÉCHEC! :( Le resultat du Test 1 chance est %d et aurait dû être 16\n\n", resultatTestyahtzee);
 
   Jet testChance2 = {1,3,5,4,4};
   int resultatTestChance2 = chance(testChance2);
@@ -384,6 +384,29 @@ void testChance()
 		printf ("RÉUSSI! :) Le Jet c'est un carre est la somme est %d\n\n", resultatTestChance2);
 	else 
 		printf ("ÉCHEC! :( Le resultat du Test 1 (carre) est %d et aurait dû être 17\n\n", resultatTestChance2);
+}
+/*************************************************/
+void testYahtzee()
+{
+  printTitreTest("testYahtzee");
+
+  Jet testYahtzee1 = {3,2,5,5,1};
+  int resultatTestyahtzee = yahtzee(testYahtzee1);
+  printArrJet("yahtzee, ->", testYahtzee1);
+
+  if (resultatTestyahtzee == 50)
+		printf ("RÉUSSI! :) Le Jet c'est un yahtzee et le resultat est %d\n\n", resultatTestyahtzee);
+	else 
+		printf ("ÉCHEC! :( Le resultat du testYahtzee est %d et aurait dû être 50\n\n", resultatTestyahtzee);
+
+  Jet testYahtzee2 = {4,4,4,4,4};
+  int resultatTestYahtzee2 = yahtzee(testYahtzee2);
+  printArrJet("yahtzee, ->", testYahtzee2);
+
+  if (resultatTestYahtzee2 == 50)
+		printf ("RÉUSSI! :) Le Jet c'est un yahtzee et le resultat est %d\n\n", resultatTestYahtzee2);
+	else 
+		printf ("ÉCHEC! :( Le resultat du Test 1 est %d et aurait dû être 50\n\n", resultatTestYahtzee2);
 }
 /*************************************************/
 void testeImprimerScoresPossibles(Jet jet)
@@ -407,5 +430,6 @@ void rouleTousTestes()
   testNbDeFace();
   testMainPLeine();
   testGrandeSuite();
+  testYahtzee();
  // testeImprimerScoresPossibles();
 }

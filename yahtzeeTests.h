@@ -27,3 +27,4 @@ void testMainPLeine();
 void testeImprimerScoresPossibles(Jet jet);
 void testChance();
 void testGrandeSuite();
+void testYahtzee();
