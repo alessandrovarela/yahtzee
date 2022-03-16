@@ -35,6 +35,12 @@ enum {FACESCHANCE    = 1,
       MINFACEDES     = 1,
       MAXFACEDES     = 6}; 
 // *****************************************************************************
+enum {FACE1 = 1,
+      FACE2 = 2,
+      FACE3 = 3,
+      FACE4 = 4,
+      FACE5 = 5,
+      FACE6 = 6};
 // Structure Boolean
 //
 // Vrai ou Faux
@@ -77,7 +83,7 @@ struct Pointage
     int gSuite;
     int yahtzee;
     int chance;
-};
+};          
 // *****************************************************************************
 // trierLesDes
 // 
@@ -162,4 +168,11 @@ int lancerDe (int min, int max );
 void lancerLesDes(Jet* jet , char choix[NOMBREDES]);
 void imprimerLesFaces(int faces, int nombreRangee);
 void imprimerJet(Jet jet);
-
+void garderPointage(Jet jet, Pointage* feuilleScore, char figure);
+int nbDeFace (Jet jet, int face);
+int mainPleine (Jet jet);
+void imprimerScoresPossibles(Jet jet);
+int carre(Jet jet);
+int grandeSuite (Jet jet);
+int chance(Jet jet);
+int yahtzee(Jet jet);
