@@ -409,11 +409,21 @@ void testYahtzee()
 		printf ("ÉCHEC! :( Le resultat du Test 1 est %d et aurait dû être 50\n\n", resultatTestYahtzee2);
 }
 /*************************************************/
-void testeImprimerScoresPossibles(Jet jet)
+void testeImprimerScoresPossibles()
 {
   printTitreTest("testeImprimerScoresPossibles");
+  
   Jet testeImprimerScoresPossibles1 = {2,2,3,3,3};
+  printArrJet("jetScoresPossibles -->", testeImprimerScoresPossibles1);
   imprimerScoresPossibles(testeImprimerScoresPossibles1);
+  
+  Jet testeImprimerScoresPossibles2 = {1,2,3,4,5};
+  printArrJet("jetScoresPossibles -->", testeImprimerScoresPossibles2);
+  imprimerScoresPossibles(testeImprimerScoresPossibles2);
+  
+  Jet testeImprimerScoresPossibles3 = {3,3,3,3,3};
+  printArrJet("jetScoresPossibles -->", testeImprimerScoresPossibles3);
+  imprimerScoresPossibles(testeImprimerScoresPossibles3);
 }
 
 void rouleTousTestes()
@@ -431,5 +441,5 @@ void rouleTousTestes()
   testMainPLeine();
   testGrandeSuite();
   testYahtzee();
- // testeImprimerScoresPossibles();
+  testeImprimerScoresPossibles();
 }

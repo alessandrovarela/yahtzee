@@ -35,6 +35,12 @@ enum {FACESCHANCE    = 1,
       MINFACEDES     = 1,
       MAXFACEDES     = 6}; 
 // *****************************************************************************
+enum {FACE1 = 1,
+      FACE2 = 2,
+      FACE3 = 3,
+      FACE4 = 4,
+      FACE5 = 5,
+      FACE6 = 6};
 // Structure Boolean
 //
 // Vrai ou Faux

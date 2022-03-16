@@ -272,15 +272,15 @@ int nbDeFace (Jet jet, int face)
 /***********************************************************/
 void imprimerScoresPossibles(Jet jet)
 {
-    printf("**********************************************");
-    printf("*    QUEL POINTAGE VOULEZ-VOUS GARDER?       *");
-    printf("**********************************************");
-    printf("*     (1) :  0       *       (B)relan = %d   *", brelan);
-    printf("*     (2) :  0       *        (C)arré = %d   *", carre);
-    printf("*     (3) :  0       *  (M)ain Pleine = %d   *", mainPleine);
-    printf("*     (4) :  0       * (P)etite suite = 00   *");
-    printf("*     (5) :  0       * (G)rande suite = %d   *", grandeSuite);
-    printf("*     (6) :  0       *      (Y)ahtzee = %d   *", yahtzee);
-    printf("*                    *       C(h)ance = %d   *", chance);
-    printf("**********************************************");
+    printf("**********************************************\n");
+    printf("*    QUEL POINTAGE VOULEZ-VOUS GARDER?       *\n");
+    printf("**********************************************\n");
+    printf("*     (1) :  %2d       *       (B)relan = %2d  *\n", nbDeFace(jet, FACE1), brelan(jet));
+    printf("*     (2) :  %2d       *        (C)arre = %2d  *\n", nbDeFace(jet, FACE2), carre(jet));
+    printf("*     (3) :  %2d       *  (M)ain Pleine = %2d  *\n", nbDeFace(jet, FACE3), mainPleine(jet));
+    printf("*     (4) :  %2d       * (P)etite suite = %2d  *\n", nbDeFace(jet, FACE4), 0);
+    printf("*     (5) :  %2d       * (G)rande suite = %2d  *\n", nbDeFace(jet, FACE5), grandeSuite(jet));
+    printf("*     (6) :  %2d       *      (Y)ahtzee = %2d  *\n", nbDeFace(jet, FACE6), yahtzee(jet));
+    printf("*                     *       C(h)ance = %2d  *\n", chance(jet));
+    printf("**********************************************\n");
 }

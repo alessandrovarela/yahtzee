@@ -24,7 +24,7 @@ void testNbDeFace();
 void printArrJet(char msg[100] , Jet jet);
 void rouleTousTestes();
 void testMainPLeine();
-void testeImprimerScoresPossibles(Jet jet);
+void testeImprimerScoresPossibles();
 void testChance();
 void testGrandeSuite();
 void testYahtzee();
