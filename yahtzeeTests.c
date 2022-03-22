@@ -269,13 +269,37 @@ void testCarre()
 		printf ("ÉCHEC! :( Le resultat du Test 1 (carre) est %d et aurait dû être 9\n\n", resultatTestCarre);
 }
 /*************************************************/
+void testPetiteSuite(){
+  printTitreTest("testPetiteSuite");
+
+  Jet testPeititSuite1 = {3,3,1,2,4};
+	int resultatTestPetiteSuite = petiteSuite(testPeititSuite1);
+  printArrJet( "Jet grande petit suite (Attendu 30) ->", testPeititSuite1 );
+
+  if (resultatTestPetiteSuite == POINTSPETITSUITE)
+    printf ("RÉUSSI! :) Le resultat du Test 1 (petiteSuite) est %d\n\n", resultatTestPetiteSuite);
+	else 
+		printf ("ÉCHEC! :( Le resultat du Test 1 (petiteSuite) est %d et aurait dû être 30\n\n", resultatTestPetiteSuite);	
+
+
+  Jet testPeititSuite2 = {3,1,4,6,5};
+	int resultatTestPetiteSuite2 = petiteSuite(testPeititSuite2);
+  printArrJet( "Jet grande petit suite (Attendu 30) ->", testPeititSuite2 );
+  
+  if (resultatTestPetiteSuite2 == POINTSPETITSUITE)
+    printf ("RÉUSSI! :) Le resultat du Test 2 (petiteSuite) est %d\n", resultatTestPetiteSuite2);
+	else 
+		printf ("ÉCHEC! :( Le resultat du Test 2 (petiteSuite) est %d et aurait dû être 30\n", resultatTestPetiteSuite2);	
+
+}
+/*************************************************/
 void testGrandeSuite()
 {
   printTitreTest("testGrandeSuite"); 
 
 	Jet testGrandeSuite1 = {1,6,4,2,5};
 	int resultatTestGrandeSuite = grandeSuite(testGrandeSuite1);
-  printArrJet( "Jet grande suite de 1 (Attendu Vrai et somme 40) ->", testGrandeSuite1 );
+  printArrJet( "Jet grande suite  (Attendu Vrai et somme 40) ->", testGrandeSuite1 );
 
   if (resultatTestGrandeSuite == 40)
 		printf ("RÉUSSI! :) Le Jet c'est un carre est la somme est %d\n\n", resultatTestGrandeSuite);
@@ -439,6 +463,7 @@ void rouleTousTestes()
   testChance();
   testNbDeFace();
   testMainPLeine();
+  testPetiteSuite();
   testGrandeSuite();
   testYahtzee();
   testeImprimerScoresPossibles();

@@ -35,12 +35,24 @@ enum {FACESCHANCE    = 1,
       MINFACEDES     = 1,
       MAXFACEDES     = 6}; 
 // *****************************************************************************
-enum {FACE1 = 1,
-      FACE2 = 2,
-      FACE3 = 3,
-      FACE4 = 4,
-      FACE5 = 5,
-      FACE6 = 6};
+// Enum Points
+//
+// Pointage des figures du jeu qui ne sont pas la somme des dés.
+//
+//*****************************************************************************
+enum Points {POINTSMAINPLEINE  = 25,
+             POINTSPETITSUITE  = 30,
+             POINTSGRANDESUITE = 40,
+             POINTSYATHZEE     = 50,
+             POINTSBONUS       = 63,
+             BONUS             = 35};
+// *****************************************************************************
+enum Faces { FACE1 = 1,
+             FACE2 = 2,
+             FACE3 = 3,
+             FACE4 = 4,
+             FACE5 = 5,
+             FACE6 = 6};
 // Structure Boolean
 //
 // Vrai ou Faux
@@ -173,6 +185,41 @@ int nbDeFace (Jet jet, int face);
 int mainPleine (Jet jet);
 void imprimerScoresPossibles(Jet jet);
 int carre(Jet jet);
+// *****************************************************************************
+// valideSequence
+//
+// Valide une sequence des dés pour les figures "petite suite" et "grande suite".
+//
+// INPUT :
+//     jet : cinq dés.
+//     int : sequence
+//
+// OUTPUT : 
+//     1 si la sequence est vrai pour les figures "petite suite" et "grande suite"
+//     et zero se la sequence est faux pour les deux figures. 
+//   
+// *****************************************************************************
+int valideSequence (Jet jet, int sequence);
+
+// *****************************************************************************
+// petiteSuite
+//
+// Calcule le pointage pour la figure "petite suite"
+//
+// INPUT :
+//     jet : cinq dés.
+//
+// OUTPUT :
+//     le pointage pour petite suite dans jet. Une petite suite vaut 30
+//     points. Il y a trois petites suites possibles : 1,2,3,4 ou 2,3,4,5 ou
+//     3,4,5,6. L’ordre des dés n’a pas d’importance
+//
+// Exemples :
+//     petiteSuite{{5,3,2,3,4}) = 30;
+//     petiteSuite({2,3,5,6,1}) = 0;
+// *****************************************************************************
+int petiteSuite(Jet jet);
+
 int grandeSuite (Jet jet);
 int chance(Jet jet);
 int yahtzee(Jet jet);

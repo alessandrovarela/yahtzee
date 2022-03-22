@@ -99,6 +99,43 @@ int mainPleine (Jet jet)
 }
 
 /***********************************************************/
+int valideSequence (Jet jet, int sequence)
+{
+    jet = trierLesDes(jet);
+
+    int compte = 1; 
+
+    for(int i = 0; i < NOMBREDES; i++)
+    {
+        // Faire le test jusqu'à position avant la dernière
+        if (i < (NOMBREDES - 1))
+        {
+            if (jet.des[i + 1] == (jet.des[i] + 1)) 
+            {    
+                compte++;
+                if ( compte == sequence )
+                   return VRAI;
+            }
+            else
+            {                
+                 if (jet.des[i + 1] != (jet.des[i]))  
+                {                
+                    compte = 1; 
+                }
+            }            
+        }
+    }
+    return FAUX;
+}
+/***********************************************************/
+int petiteSuite(Jet jet)
+{
+    if (valideSequence(jet, SEQPETITESUITE))
+        return POINTSPETITSUITE;
+    else
+        return 0;    
+}
+/***********************************************************/
 int grandeSuite (Jet jet)
 {
     jet = trierLesDes(jet);

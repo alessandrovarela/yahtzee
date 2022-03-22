@@ -26,5 +26,6 @@ void rouleTousTestes();
 void testMainPLeine();
 void testeImprimerScoresPossibles();
 void testChance();
+void testPetiteSuite();
 void testGrandeSuite();
 void testYahtzee();
