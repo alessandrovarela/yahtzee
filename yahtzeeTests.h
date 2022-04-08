@@ -31,3 +31,4 @@ void testGrandeSuite();
 void testYahtzee();
 void testegarderPointage();
 void testeSommeScoreSup();
+void testesommeScoreInf();

@@ -345,6 +345,18 @@ int sommeScoreSup(Pointage* feuilleScore)
            feuilleScore->six;
 }
 /***********************************************************/
+int sommeScoreInf(Pointage* feuilleScore)
+{
+    return feuilleScore->brelan + 
+           feuilleScore->carre +  
+           feuilleScore->mainPleine + 
+           feuilleScore->pSuite + 
+           feuilleScore->gSuite + 
+           feuilleScore->yahtzee +
+           feuilleScore->chance;
+
+}
+/***********************************************************/
 int nbDeFace (Jet jet, int face)
 {
     int compteur = 0;

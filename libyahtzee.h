@@ -224,3 +224,4 @@ int grandeSuite (Jet jet);
 int chance(Jet jet);
 int yahtzee(Jet jet);
 int sommeScoreSup(Pointage* feuilleScore);
+int sommeScoreInf(Pointage* feuilleScore);
