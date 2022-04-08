@@ -357,6 +357,11 @@ int sommeScoreInf(Pointage* feuilleScore)
 
 }
 /***********************************************************/
+int sommeScoreTotal(Pointage* feuilleScore)
+{
+    return sommeScoreSup(feuilleScore) + sommeScoreInf(feuilleScore) + feuilleScore->bonus; 
+}
+/***********************************************************/
 int nbDeFace (Jet jet, int face)
 {
     int compteur = 0;
@@ -383,4 +388,32 @@ void imprimerScoresPossibles(Jet jet)
     printf("*     (6) :  %2d       *      (Y)ahtzee = %2d  *\n", nbDeFace(jet, FACE6), yahtzee(jet));
     printf("*                     *       C(h)ance = %2d  *\n", chance(jet));
     printf("**********************************************\n");
+}
+/***********************************************************/
+void imprimerFeuilleScore(Pointage* feuilleScore, int tour)
+{
+    
+printf("************************************************************************************\n");
+printf("*                              FEUILLE DE SCORE TOUR  %2d/%2d                        *\n", tour, NTOTALTOUR);
+printf("************************************************************************************\n");
+printf("*                                                                                  *\n");
+printf("**********  Partie superieurem **********    **********  Partie inferieure *********\n");
+printf("*                                      *    *                                      *\n");
+printf("*                1 :  %2d               *    *               Brelan =  %2d           *\n",feuilleScore->un, feuilleScore->brelan );
+printf("*                2 :  %2d               *    *               Carre  =  %2d           *\n",feuilleScore->deux, feuilleScore->carre );
+printf("*                3 :  %2d               *    *          Main Pleine =  %2d           *\n",feuilleScore->trois, feuilleScore->mainPleine);
+printf("*                4 :  %2d               *    *         Petite suite =  %2d           *\n",feuilleScore->quatre, feuilleScore->pSuite);
+printf("*                5 :  %2d               *    *         Grande suite =  %2d           *\n",feuilleScore->cinq, feuilleScore->gSuite);
+printf("*                6 :  %2d               *    *              Yahtzee =  %2d           *\n",feuilleScore->six, feuilleScore->yahtzee);
+printf("*                                      *    *               Chance =  %2d           *\n",feuilleScore->chance);
+printf("*                                      *    *                                      *\n");
+printf("*     Somme partie superieure :   %2d   *    *     Somme partie inferieure :  %2d    *\n", sommeScoreSup(feuilleScore), sommeScoreInf(feuilleScore));
+printf("****************************************    ****************************************\n");
+if (feuilleScore->bonus > 0)
+    printf("*                                    Bonus = %2d                                    *\n", feuilleScore->bonus);
+else
+    printf("*                                                                                  *\n");
+printf("************************************************************************************\n");
+printf("*                                     Score =  %2d                                  *\n", sommeScoreTotal(feuilleScore));
+printf("************************************************************************************\n");
 }

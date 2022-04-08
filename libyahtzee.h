@@ -16,6 +16,7 @@
 #include <stdlib.h>
 
 #define NOMBREDES 5 //nombre de dés du jeu
+#define NTOTALTOUR 13 //nombre total de tour
 // #define MINFACEDES 1
 // #define MAXFACEDES 6
 
@@ -95,6 +96,7 @@ struct Pointage
     int gSuite;
     int yahtzee;
     int chance;
+    int bonus;
 };          
 // *****************************************************************************
 // trierLesDes
@@ -225,3 +227,5 @@ int chance(Jet jet);
 int yahtzee(Jet jet);
 int sommeScoreSup(Pointage* feuilleScore);
 int sommeScoreInf(Pointage* feuilleScore);
+void imprimerFeuilleScore(Pointage* feuilleScore, int tour);
+int sommeScoreTotal(Pointage* feuilleScore);

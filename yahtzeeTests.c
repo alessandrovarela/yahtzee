@@ -484,26 +484,29 @@ void testeSommeScoreSup()
 {
   printTitreTest("testeSommeScoreSup");
 
-  Pointage pointagesss  = {3, 3, 2, 1, 4, 6, 0, 0, 0, 0, 0, 0};
+  Pointage pointagesss  = {3, 3, 2, 1, 4, 6, 0, 0, 0, 0, 0, 0, 0};
   int resultatTestsss = sommeScoreSup(&pointagesss);
 
   if (resultatTestsss == 19)
 		printf ("RÉUSSI! :) le resultat est %d\n\n", resultatTestsss);
 	else 
 		printf ("ÉCHEC! :( Le resultat du Test est %d et aurait dû être 19\n\n", resultatTestsss);
+  imprimerFeuilleScore(&pointagesss, 3);
 }
 
 void testesommeScoreInf()
 {
-   printTitreTest("testeSommeScoreSup");
+   printTitreTest("testeSommeScoreInf");
 
-  Pointage pointagessi  = {3, 3, 2, 1, 4, 0, 2, 1, 1, 3, 3, 3};
+  Pointage pointagessi  = {3, 3, 2, 1, 4, 0, 2, 1, 1, 3, 3, 3, 0, BONUS};
   int resultatTestssi = sommeScoreInf(&pointagessi);
 
   if (resultatTestssi == 13)
 		printf ("RÉUSSI! :) le resultat du score inferieur est %d\n\n", resultatTestssi);
 	else 
 		printf ("ÉCHEC! :( Le resultat du score inferieur est %d et aurait dû être 13\n\n", resultatTestssi);
+
+  imprimerFeuilleScore(&pointagessi, 4);
 }
 
 void rouleTousTestes()
