@@ -302,7 +302,7 @@ void testGrandeSuite()
   printArrJet( "Jet grande suite  (Attendu Vrai et somme 40) ->", testGrandeSuite1 );
 
   if (resultatTestGrandeSuite == 40)
-		printf ("RÉUSSI! :) Le Jet c'est un carre est la somme est %d\n\n", resultatTestGrandeSuite);
+		printf ("RÉUSSI! :) Le Jet c'est un g est la somme est %d\n\n", resultatTestGrandeSuite);
 	else 
 		printf ("ÉCHEC! :( Le resultat du Test 1 (carre) est %d et aurait dû être 40\n\n", resultatTestGrandeSuite);
 
@@ -450,6 +450,36 @@ void testeImprimerScoresPossibles()
   imprimerScoresPossibles(testeImprimerScoresPossibles3);
 }
 
+void testegarderPointage()
+{
+  printTitreTest("testegarderPointage");
+
+  Jet jet1 = {2,2,1,1,1};
+  Pointage pointage1;
+  printArrJet("jet1->", jet1);
+
+  garderPointage(jet1, &pointage1, 'h');
+
+  if (pointage1.chance == 7)
+		printf ("RÉUSSI! :) le resultat de la CHANCE est %d\n\n", pointage1.chance);
+	else 
+		printf ("ÉCHEC! :( Le resultat du Test CHANCE est %d et aurait dû être 14\n\n", pointage1.chance);
+  
+  garderPointage(jet1, &pointage1, 'B');
+
+  if (pointage1.brelan == 7)
+		printf ("RÉUSSI! :) le resultat de le CARRE est %d\n\n", pointage1.brelan);
+	else 
+		printf ("ÉCHEC! :( Le resultat du Test CARRE est %d et aurait dû être 3\n\n", pointage1.brelan);
+
+  garderPointage(jet1, &pointage1, 'm');
+
+  if (pointage1.mainPleine == 25)
+		printf ("RÉUSSI! :) le resultat de le MAIN PLEINE est %d\n\n", pointage1.mainPleine);
+	else 
+		printf ("ÉCHEC! :( Le resultat du Test MAIN PLEINE est %d et aurait dû être 25\n\n", pointage1.mainPleine);
+}
+
 void rouleTousTestes()
 {
   testImprimerLesFaces();
@@ -467,4 +497,5 @@ void rouleTousTestes()
   testGrandeSuite();
   testYahtzee();
   testeImprimerScoresPossibles();
+  testegarderPointage();
 }

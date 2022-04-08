@@ -283,15 +283,61 @@ void garderPointage(Jet jet, Pointage* feuilleScore, char figure)
 {
     switch (figure)
     {
+    case '1':
+        feuilleScore->un = nbDeFace(jet, FACE1);
+        break;
+    case '2':
+        feuilleScore->deux = nbDeFace(jet, FACE2);
+        break;
+    case '3':
+        feuilleScore->trois = nbDeFace(jet, FACE3);
+        break;
+    case '4':
+        feuilleScore->quatre = nbDeFace(jet, FACE4);
+        break;
+    case '5':
+        feuilleScore->cinq = nbDeFace(jet, FACE5);
+        break;
+    case '6':
+        feuilleScore->six = nbDeFace(jet, FACE6);
+        break;
+    case 'b': 
     case 'B': 
         feuilleScore->brelan = brelan(jet);
         break;
+    case 'c':
     case 'C':
-       // feuilleScore->carre = 
-    
+        feuilleScore->carre = carre(jet);
+        break;
+    case 'm':
+    case 'M':
+        feuilleScore->mainPleine = mainPleine(jet);
+        break;
+    case 'p':
+    case 'P':
+        feuilleScore->pSuite = petiteSuite(jet);
+        break;
+    case 'g':
+    case 'G':
+        feuilleScore->gSuite = grandeSuite(jet);
+        break;
+    case 'y':
+    case 'Y':
+        feuilleScore->yahtzee = yahtzee(jet);
+        break;
+    case 'h':
+    case 'H':
+        feuilleScore->chance = chance(jet);
+        break;
+
     default:
         break;
     }
+}
+/***********************************************************/
+int sommeScoreSup(Pointage* feuilleScore)
+{
+
 }
 /***********************************************************/
 int nbDeFace (Jet jet, int face)

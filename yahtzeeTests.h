@@ -29,3 +29,4 @@ void testChance();
 void testPetiteSuite();
 void testGrandeSuite();
 void testYahtzee();
+void testegarderPointage();
