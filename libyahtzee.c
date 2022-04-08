@@ -337,7 +337,12 @@ void garderPointage(Jet jet, Pointage* feuilleScore, char figure)
 /***********************************************************/
 int sommeScoreSup(Pointage* feuilleScore)
 {
-
+    return feuilleScore->un + 
+           feuilleScore->deux +  
+           feuilleScore->trois + 
+           feuilleScore->quatre + 
+           feuilleScore->cinq + 
+           feuilleScore->six;
 }
 /***********************************************************/
 int nbDeFace (Jet jet, int face)

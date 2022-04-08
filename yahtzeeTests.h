@@ -30,3 +30,4 @@ void testPetiteSuite();
 void testGrandeSuite();
 void testYahtzee();
 void testegarderPointage();
+void testeSommeScoreSup();

@@ -480,6 +480,19 @@ void testegarderPointage()
 		printf ("ÉCHEC! :( Le resultat du Test MAIN PLEINE est %d et aurait dû être 25\n\n", pointage1.mainPleine);
 }
 
+void testeSommeScoreSup()
+{
+  printTitreTest("testeSommeScoreSup");
+  
+  Pointage pointagesss  = {3, 3, 2, 1, 4, 6, 0, 0, 0, 0, 0, 0};
+  int resultatTestsss = sommeScoreSup(&pointagesss);
+
+  if (resultatTestsss == 19)
+		printf ("RÉUSSI! :) le resultat est %d\n\n", resultatTestsss);
+	else 
+		printf ("ÉCHEC! :( Le resultat du Test est %d et aurait dû être 19\n\n", resultatTestsss);
+}
+
 void rouleTousTestes()
 {
   testImprimerLesFaces();
@@ -498,4 +511,5 @@ void rouleTousTestes()
   testYahtzee();
   testeImprimerScoresPossibles();
   testegarderPointage();
+  testeSommeScoreSup();
 }
